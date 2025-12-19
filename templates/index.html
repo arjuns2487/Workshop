@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+
+    <h1>House Price Prediction</h1>
+
+    <form onsubmit="onButtonPress(event)">
+        <label>
+            Area (in sqft)
+            <input type="number" id="area" required>
+        </label>
+
+        <label>
+            Bedrooms
+            <input type="number" id="bedroom" required>
+        </label>
+
+        <label>
+            Age of Home (in years)
+            <input type="number" id="age" required>
+        </label>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="result-box">
+        <h2>Predicted Price</h2>
+        <div id="predicted-price">--</div>
+    </div>
+
+    <script>
+        async function onButtonPress(event) {
+            event.preventDefault();
+
+            const area = document.getElementById("area").value;
+            const bedrooms = document.getElementById("bedroom").value;
+            const age = document.getElementById("age").value;
+            const predictedPrice = document.getElementById("predicted-price");
+
+            const response = await fetch("/predict", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ area, bedrooms, age })
+            });
+
+            const data = await response.json();
+            const value = parseFloat(data.predicted_value);
+            predictedPrice.innerText = isNaN(value) ? "--" : value.toFixed(3);
+        }
+    </script>
+
+</body>
+</html>
