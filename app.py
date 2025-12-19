@@ -22,9 +22,6 @@ def predict():
     area=float(data["area"])
     age=float(data["age"])
     bed=float(data["bedrooms"])
-    print("The area is : ",area)
-    print("Age : ",age)
-    print("Bedrooms : ",bed)
     predicted_value=model.predict([[area,bed,age]])
     return jsonify({"predicted_value":predicted_value[0]})
 

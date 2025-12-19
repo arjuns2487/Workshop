@@ -9,9 +9,15 @@ body {
     min-height: 100vh;
     background: linear-gradient(135deg, #9eabe6, #eceff1);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 h1 {
@@ -34,6 +40,7 @@ form {
     padding: 30px;
     border-radius: 10px;
     width: 350px;
+    max-width: 90%;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -41,11 +48,13 @@ form {
 }
 
 label {
+    display: block;
     font-weight: 600;
     color: #34495e;
 }
 
 input[type="number"] {
+    display: block;
     margin-top: 6px;
     padding: 12px;
     border: 1px solid #bdc3c7;
@@ -80,6 +89,7 @@ button:hover {
     padding: 20px 30px;
     border-radius: 10px;
     width: 350px;
+    max-width: 90%;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
 }

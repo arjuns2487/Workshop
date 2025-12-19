@@ -3,34 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>House Price Prediction</title>
-    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-    <h1>House Price Prediction</h1>
+    <div class="container">
+        <h1>House Price Prediction</h1>
 
-    <form onsubmit="onButtonPress(event)">
-        <label>
-            Area (in sqft)
-            <input type="number" id="area" required>
-        </label>
+        <form onsubmit="onButtonPress(event)">
+            <label>
+                Area (in sqft)
+                <input type="number" id="area" required>
+            </label>
 
-        <label>
-            Bedrooms
-            <input type="number" id="bedroom" required>
-        </label>
+            <label>
+                Bedrooms               
+                <input type="number" id="bedroom" required>
+            </label>
 
-        <label>
-            Age of Home (in years)
-            <input type="number" id="age" required>
-        </label>
+            <label>
+                Age of Home (in years)
+                <input type="number" id="age" required>
+            </label>
 
-        <button type="submit">Submit</button>
-    </form>
+            <button type="submit">Submit</button>
+        </form>
 
-    <div class="result-box">
-        <h2>Predicted Price</h2>
-        <div id="predicted-price">--</div>
+        <div class="result-box">
+            <h2>Predicted Price</h2>
+            <div id="predicted-price">--</div>
+        </div>
     </div>
 
     <script>
